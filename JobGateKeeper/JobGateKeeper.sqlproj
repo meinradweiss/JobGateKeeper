@@ -129,6 +129,7 @@
     <Folder Include="Core\Stored Procedures\" />
     <Folder Include="Security\" />
     <Folder Include="Core\Sequences\" />
+    <Folder Include="TestScripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Core\Tables\ExecutionRequest.sql">
@@ -169,5 +170,8 @@
       <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
       <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
     </ArtifactReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TestScripts\TestProcedure.sql" />
   </ItemGroup>
 </Project>
