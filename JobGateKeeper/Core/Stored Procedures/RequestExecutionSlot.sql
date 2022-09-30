@@ -158,7 +158,8 @@ BEGIN
         ,[RequestStartTime]
         ,[RequestFullfilledTime]
         ,[NextValidStartTime]
-        ,DATEDIFF(SECOND, @NOW, [NextValidStartTime]) AS SecondsToWait
+        ,DATEDIFF(SECOND, @NOW, [NextValidStartTime])       AS SecondsToWait
+        ,15 * 60 / Config.MaxRequestsPer15Min(@Application) AS OptimalDelaySeconds
         ,[DenyReason]
       FROM [Core].[ExecutionRequest] 
       WHERE [ExecutionRequestGId] = @ExecutionRequestGId
